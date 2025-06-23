@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="images/logo PPAC fs developer.png"
+    />
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <nav>
+          <img src="images/logo PPAC fs developer.png" class="logo" />
+          <ul id="sidemenu">
+            <li><a href="#header">Accueil</a></li>
+            <li><a href="#about">A propos</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projets">Projets</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <i class="fas fa-times" onclick="closeMenu()"></i>
+          </ul>
+          <i class="fas fa-bars" onclick="openMenu()"></i>
+        </nav>
+        <br />
+        <div class="img-dev">
+          <div class="header-text">
+            <p>DÉVELOPPEUR FULL STACK</p>
+            <h1>
+              Salut, je suis <br />
+              <span>PAUL PHILIPPE AIMÉ COLY</span><br />
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img src="images/user.jpg" />
+          </div>
+          <div class="about-col-2">
+            <h1 class="sub-title">A propos de moi</h1>
+            <br />
+            <p>
+              Développeur Full Stack passionné et innovant, je maîtrise la
+              conception et le développement d'applications web dynamiques. Fort
+              d'une expérience en programmation backend et en intégration
+              frontend, je conçois des interfaces intuitives et performantes,
+              optimisant l'expérience utilisateur à travers des solutions
+              techniques robustes. Rigoureux, méthodique et orienté vers les
+              résultats, je suis capable de travailler en équipe et de mettre
+              mon expertise au service de projets ambitieux, mêlant technologie
+              et créativité pour un impact digital puissant.
+            </p>
+
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('skills')">
+                Compétences
+              </p>
+              <p class="tab-links" onclick="opentab('experience')">
+                Expériences
+              </p>
+              <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li>
+                  <span>Front-End (Client-Side)</span>
+                  <ul>
+                    <li>
+                      Langages & Frameworks : HTML, CSS, JavaScript (ES6+)
+                      Frameworks front-end : React.js, Angular, Vue.js
+                      Préprocesseurs CSS (Sass, Less) Outils de bundling
+                      (Webpack, Vite)
+                    </li>
+                    <div
+                      id="more-photographie"
+                      class="voir-plus-content"
+                      style="display: none"
+                    >
+                      <li>
+                        Expérience utilisateur (UX/UI) : Responsive Design
+                        (Mobile First) Librairies CSS (Bootstrap, Tailwind)
+                        Outils de design (Figma, Adobe XD)
+                      </li>
+                      <li>
+                        Gestion des états et interactions : Comprendre la
+                        gestion des états dans une application web avec des
+                        outils comme Redux, Context API ou Vuex, et savoir
+                        optimiser les animations et interactions pour une
+                        navigation intuitive.
+                      </li>
+                      <li>
+                        Optimisation des performances : Comprendre le rendu des
+                        pages web et optimiser le chargement des ressources
+                        (lazy loading, compression d'images, gestion efficace du
+                        DOM).
+                      </li>
+                      <li>
+                        Gestion des animations et interactivité avancée :
+                        Intégrer des animations fluides et des interactions
+                        engageantes avec CSS animations ou les API Web comme
+                        WebGL pour des effets visuels dynamiques.
+                      </li>
+                    </div>
+                    <button
+                      onclick="toggleMore('more-photographie', this)"
+                      class="voir-plus-btn"
+                      style="border: 1px solid #000; padding: 5px 10px"
+                    >
+                      Voir plus
+                    </button>
+                  </ul>
+                </li>
+                <li>
+                  <span>Back-End (Server-Side)</span>
+                  <ul>
+                    <li>
+                      Langages & Frameworks : Node.js (Express/NestJS), Python ,
+                      PHP (Laravel), Java. Gestion des API (REST, GraphQL)
+                      Authentification (JWT, OAuth)
+                    </li>
+                    <div
+                      id="more-montage"
+                      class="voir-plus-content"
+                      style="display: none"
+                    >
+                      <li>
+                        Bases de données : SQL (PostgreSQL, MySQL) NoSQL
+                        (MongoDB, Firebase)
+                      </li>
+                      <li>
+                        Frameworks CSS pour le Frontend : Bootstrap : Framework
+                        CSS populaire pour un développement rapide et réactif.
+                        Tailwind CSS : Système de classes utilitaires permettant
+                        une personnalisation avancée du design. Flowbite :
+                        Bibliothèque de composants UI basée sur Tailwind,
+                        facilitant l'intégration d'interfaces modernes.
+                      </li>
+                      <li>
+                        Optimisation de la consommation des ressources :
+                        Utilisation de techniques comme lazy loading, profiling
+                        des requêtes, et gestion efficace des connexions aux
+                        bases de données pour améliorer les performances et
+                        réduire la latence.
+                      </li>
+                      <li>
+                        Gestion avancée des sessions et cookies :
+                        Implémentation, sécurisation des sessions utilisateur et
+                        gestion des cookies pour améliorer l'expérience
+                        utilisateur et la sécurité.
+                      </li>
+                    </div>
+                    <button
+                      onclick="toggleMore('more-montage', this)"
+                      class="voir-plus-btn"
+                      style="border: 1px solid #000; padding: 5px 10px"
+                    >
+                      Voir plus
+                    </button>
+                  </ul>
+                </li>
+                <li>
+                  <span>DevOps & Déploiement</span>
+                  <ul>
+                    <li>
+                      Gestion de version : Git (GitHub, GitLab, Bitbucket)
+                    </li>
+                    <div
+                      id="more-videaste"
+                      class="voir-plus-content"
+                      style="display: none"
+                    >
+                      <li>
+                        CI/CD :GitHub Actions, Netlify, Postman (API Testing)
+                      </li>
+                      <li>Hébergement cloud : AWS, Vercel</li>
+                      <li>Mise en ligne : Firebase</li>
+                    </div>
+                    <button
+                      onclick="toggleMore('more-videaste', this)"
+                      class="voir-plus-btn"
+                      style="border: 1px solid #000; padding: 5px 10px"
+                    >
+                      Voir plus
+                    </button>
+                  </ul>
+                </li>
+                <li>
+                  <span>Compétences transversales</span>
+                  <ul>
+                    <li>
+                      Bonnes pratiques : Clean Code, SOLID, Design Patterns
+                      Tests unitaires/intégration (Jest, Cypress, PHPUnit)
+                    </li>
+                    <div
+                      id="more-graphiste"
+                      class="voir-plus-content"
+                      style="display: none"
+                    >
+                      <li>
+                        Sécurité : Protection contre les injections SQL, XSS,
+                        CSRF HTTPS, CORS, sécurisation des APIs
+                      </li>
+                      <li>
+                        Soft Skills : Résolution de problèmes, autonomie
+                        Collaboration (Agile/Scrum) Veille technologique
+                      </li>
+                      <li>
+                        Gestion et optimisation des performances des requêtes :
+                        Surveillance et amélioration des accès aux bases de
+                        données, gestion du caching et réduction du temps de
+                        réponse des applications.
+                      </li>
+                      <li>
+                        Collaboration et gestion des conflits : Maîtrise de Git
+                        Flow, pull requests, et techniques de gestion de projet
+                        pour une meilleure coordination en équipe.
+                      </li>
+                    </div>
+                    <button
+                      onclick="toggleMore('more-graphiste', this)"
+                      class="voir-plus-btn"
+                      style="border: 1px solid #000; padding: 5px 10px"
+                    >
+                      Voir plus
+                    </button>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="experience">
+              <ul>
+                <li>
+                  <span
+                    >CHORALE MARIE AUXILIATRICE (membre commission
+                    organisation)</span
+                  ><br />
+                  <small>2024-2025</small>
+                  <p>
+                    Création d'un environnement propice à l'engagement des
+                    membres et à la réussite des événements musicaux.
+                  </p>
+                </li>
+                <li>
+                  <span>YESHUA GOSPEL (commissaire aux comptes)</span><br />
+                  <small>2025-Présent</small>
+                  <p>
+                    Élaboration de budgets prévisionnels pour assurer un
+                    équilibre financier et anticiper les besoins du chœur.
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="education">
+              <ul>
+                <li>
+                  <span>GOMYCODE (Software Developer Bootcamp)</span><br />
+                  <small>2024-2025</small>
+                  <p>Développement Web Full Stack</p>
+                </li>
+                <li>
+                  <span>AFI L'UE (Licence 1 développement web)</span><br />
+                  <small>2023-2024</small>
+                  <p>Langages de conception et développement</p>
+                </li>
+                <li>
+                  <span
+                    >Complexe Scolaire Avenir Apprenti-Sage (Baccalaureat)</span
+                  ><br />
+                  <small>2022-2023</small>
+                  <p>Baccalaureat en Sciences Humaines et Sociales</p>
+                </li>
+              </ul>
+            </div>
+            <script>
+              var tablinks = document.getElementsByClassName("tab-links");
+              var tabcontents = document.getElementsByClassName("tab-contents");
+
+              function opentab(tabname) {
+                for (let tablink of tablinks) {
+                  tablink.classList.remove("active-link");
+                }
+                for (let tabcontent of tabcontents) {
+                  tabcontent.classList.remove("active-tab");
+                }
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(tabname).classList.add("active-tab");
+              }
+              function toggleMore(id, button) {
+                const content = document.getElementById(id);
+                const isVisible = content.style.display === "block";
+                content.style.display = isVisible ? "none" : "block";
+                button.textContent = isVisible ? "Voir plus" : "Voir moins";
+              }
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="services">
+      <div class="container">
+        <h1 class="sub-title left-align">Mes Services</h1>
+        <div class="services-cards-wrapper">
+          <div class="service-card">
+            <h2>
+              <i class="fas fa-laptop-code"></i> Développement d'Applications
+              Web Sur Mesure
+            </h2>
+            <p>
+              Conception et réalisation d'applications web complètes, de
+              l'interface utilisateur (UI/UX) à la base de données.
+            </p>
+          </div>
+          <div class="service-card">
+            <h2>
+              <i class="fas fa-server"></i> Création d'API RESTful ou GraphQL
+            </h2>
+            <p>
+              Développement d'interfaces de programmation (API) pour connecter
+              le frontend au backend ou permettre l'intégration avec des
+              services tiers.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <h2>
+              <i class="fas fa-tools"></i> Maintenance et Optimisation de Sites
+              Existants
+            </h2>
+            <p>
+              Amélioration des performances, correction de bugs, mise à jour des
+              technologies et sécurisation des applications existantes.
+            </p>
+          </div>
+          <div class="service-card">
+            <h2>
+              <i class="fas fa-cloud-upload-alt"></i> Déploiement et DevOps de
+              Base
+            </h2>
+            <p>
+              Mise en production et gestion de l'infrastructure d'une
+              application (hébergement, CI/CD, surveillance).
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="projets">
+      <div class="container">
+        <h1 class="sub-title left-align">Derniers Projets</h1>
+        <div class="work-list">
+          <div class="work">
+            <img src="images/baron life.jpg" />
+            <div class="layer">
+              <h3></h3>
+              <p>Site d'un restaurant🍽️</p>
+              <a
+                href="https://v2-frontend-2.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="images/quiz.png" />
+            <div class="layer">
+              <h3></h3>
+              <p>Jeu de quiz🧠</p>
+              <a
+                href="https://quizmaster-tau.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fas fa-external-link-alt"></i
+              ></a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="images/météo.png" />
+            <div class="layer">
+              <h3></h3>
+              <p>Météo🌤️</p>
+              <a
+                href="https://m-t-o-paul-v2.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fas fa-external-link-alt"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <a
+          href="https://github.com/PaulPhilippe08?tab=repositories "
+          class="btn"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Voir plus</a
+        >
+      </div>
+    </div>
+    <div id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="contact-left">
+            <h1 class="sub-title">Contactez-Moi</h1>
+            <p><i class="fas fa-paper-plane"></i>paulphilippecoly@gmail.com</p>
+            <p><i class="fas fa-phone-square-alt"></i>+221 78 343 64 28</p>
+            <div class="social-icons">
+              <a
+                href="https://snapchat.com/t/dY09zQOc"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-snapchat"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/paul-philippe-aim%C3%A9-coly-575559298/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a
+                href="https://github.com/PaulPhilippe08"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+            <a href="images/Mon cv.pdf" download class="btn btn2"
+              >Télécharger mon CV</a
+            >
+          </div>
+          <div class="contact-right">
+            <form action="https://formspree.io/f/mpwdblwa" method="POST">
+              <input type="text" name="name" placeholder="Votre Nom" required />
+              <input
+                type="email"
+                name="email"
+                placeholder="Votre Email"
+                required
+              />
+              <textarea
+                name="message"
+                rows="6"
+                placeholder="Votre Message"
+                required
+              ></textarea>
+              <button type="submit" class="btn btn2">Envoyer</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>
+        Copyright © 2025 PPAC. Fait par Paul Philippe Aimé COLY avec
+        <i class="fas fa-heart"></i>. Tous droits reservés.
+      </p>
+    </div>
+    <script>
+      var sidemenu = document.getElementById("sidemenu");
+      function openMenu() {
+        sidemenu.style.right = "0";
+      }
+      function closeMenu() {
+        sidemenu.style.right = "-200px";
+      }
+    </script>
+  </body>
+</html>
