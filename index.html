@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -9,6 +9,12 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <!-- Toastify CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
     <link
       rel="icon"
       type="image/x-icon"
@@ -16,13 +22,13 @@
     />
   </head>
   <body>
-    <div id="accueil">
+    <div id="header">
       <div class="container">
         <nav>
           <img src="images/logo PPAC fs developer.png" class="logo" />
           <ul id="sidemenu">
-            <li><a href="#accueil">Accueil</a></li>
-            <li><a href="#à-propos">A propos</a></li>
+            <li><a href="#header">Accueil</a></li>
+            <li><a href="#about">A propos</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#projets">Projets</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -42,7 +48,7 @@
         </div>
       </div>
     </div>
-    <div id="à-propos">
+    <div id="about">
       <div class="container">
         <div class="row">
           <div class="about-col-1">
@@ -164,9 +170,9 @@
                       style="display: none"
                     >
                       <li>
-                        CI/CD : GitHub Actions, Netlify, Postman (API Testing).
+                        CI/CD :GitHub Actions, Netlify, Postman (API Testing).
                       </li>
-                      <li>Hébergement: GitHub, Vercel.</li>
+                      <li>Hébergement cloud : Vercel.</li>
                     </div>
                     <button
                       onclick="toggleMore('more-videaste', this)"
@@ -240,8 +246,8 @@
                   <p>Développement Web Full Stack.</p>
                 </li>
                 <li>
-                  <span>AFI L'UE (Licence 1 développement web)</span><br />
-                  <small>2023-2024</small>
+                  <span>AFI L'UE (Licence 1-2 développement web)</span><br />
+                  <small>2023-2024 / 2025-2026</small>
                   <p>Langages de conception et développement.</p>
                 </li>
                 <li>
@@ -412,7 +418,11 @@
             >
           </div>
           <div class="contact-right">
-            <form action="https://formspree.io/f/mpwdblwa" method="POST">
+            <form
+              id="contact-form"
+              action="https://formspree.io/f/mpwdblwa"
+              method="POST"
+            >
               <input type="text" name="name" placeholder="Votre Nom" required />
               <input
                 type="email"
@@ -438,6 +448,13 @@
         <i class="fas fa-heart"></i>. Tous droits reservés.
       </p>
     </div>
+
+    <!-- Toastify JS -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+
     <script>
       var sidemenu = document.getElementById("sidemenu");
       function openMenu() {
@@ -445,6 +462,69 @@
       }
       function closeMenu() {
         sidemenu.style.right = "-200px";
+      }
+
+      // Gestion du formulaire de contact avec Toastify
+      const form = document.getElementById("contact-form");
+
+      if (form) {
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          try {
+            const response = await fetch(form.action, {
+              method: "POST",
+              body: new FormData(form),
+              headers: {
+                Accept: "application/json",
+              },
+            });
+
+            if (response.ok) {
+              // Toast de succès
+              Toastify({
+                text: "✅ Message envoyé avec succès !",
+                duration: 3000,
+                gravity: "top",
+                position: "right",
+                style: {
+                  background: "linear-gradient(135deg, #00b09b, #96c93d)",
+                  borderRadius: "8px",
+                  fontSize: "14px",
+                },
+              }).showToast();
+
+              // Réinitialiser le formulaire
+              form.reset();
+            } else {
+              // Toast d'erreur
+              Toastify({
+                text: "❌ Erreur lors de l'envoi. Veuillez réessayer.",
+                duration: 3000,
+                gravity: "top",
+                position: "right",
+                style: {
+                  background: "linear-gradient(135deg, #ff5f6d, #ffc371)",
+                  borderRadius: "8px",
+                  fontSize: "14px",
+                },
+              }).showToast();
+            }
+          } catch (error) {
+            // Toast d'erreur de connexion
+            Toastify({
+              text: "❌ Erreur de connexion. Veuillez réessayer.",
+              duration: 3000,
+              gravity: "top",
+              position: "right",
+              style: {
+                background: "linear-gradient(135deg, #ff5f6d, #ffc371)",
+                borderRadius: "8px",
+                fontSize: "14px",
+              },
+            }).showToast();
+          }
+        });
       }
     </script>
   </body>
